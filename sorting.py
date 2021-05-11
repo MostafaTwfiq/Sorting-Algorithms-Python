@@ -23,5 +23,5 @@ class Sorting:
         f_half_e = bound - 1
         s_half_s = bound + 1
         s_half_e = e
-        self.quick_sort(arr, f_half_s, f_half_e)
-        self.quick_sort(arr, s_half_s, s_half_e)
+        self.quick_sort_helper(arr, f_half_s, f_half_e)
+        self.quick_sort_helper(arr, s_half_s, s_half_e)
