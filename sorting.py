@@ -25,3 +25,13 @@ class Sorting:
         s_half_e = e
         self.quick_sort_helper(arr, f_half_s, f_half_e)
         self.quick_sort_helper(arr, s_half_s, s_half_e)
+
+    def selection_sort(self, arr):
+
+        for i in range(0, len(arr), 1):
+            min_element = i
+            for j in range(i, len(arr), 1):
+                if arr[min_element] > arr[j]:
+                    min_element = j
+
+            arr[i], arr[min_element] = arr[min_element], arr[i]
