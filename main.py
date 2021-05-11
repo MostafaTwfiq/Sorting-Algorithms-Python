@@ -12,7 +12,10 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print("NOP")
+    arr = [10, 4, 2, 3, 6, 7, 9, 8, 1, 5]
+    sort = s.Sorting()
+    sort.quick_sort(arr)
+    print(arr)
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
