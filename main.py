@@ -4,6 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 import sorting as s
+import generator as g
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -12,9 +13,8 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    arr = [10, 4, 2, 3, 6, 7, 9, 8, 1, 5]
-    sort = s.Sorting()
-    sort.quick_sort(arr)
+    generator = g.GenerateArray()
+    arr = generator.generate_array(10, 0, 10)
     print(arr)
 
 
