@@ -21,7 +21,6 @@ class Sorting:
         self.quick_sort_helper(arr, bound + 1, e)
 
     def selection_sort(self, arr):
-
         for i in range(0, len(arr), 1):
             min_element = i
             for j in range(i, len(arr), 1):
