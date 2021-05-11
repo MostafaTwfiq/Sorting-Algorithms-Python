@@ -6,16 +6,18 @@
 import sorting as s
 import generator as g
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     generator = g.GenerateArray()
     arr = generator.generate_array(10, 0, 10)
     print(arr)
 
+
+def check_if_sorted(array):
+    for i in range(0, len(array) - 1, 1):
+        if array[i] > array[i + 1]:
+            return False
+
+    return True
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
