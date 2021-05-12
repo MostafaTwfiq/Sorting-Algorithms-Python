@@ -95,7 +95,7 @@ def heapify(arr, n, i):
         heapify(arr, n, largest)
 
 def bubbleSort(arr):
-    for i in range(len(arr)-2):
+    for i in range(len(arr)-1):
         swap = False
 
         for j in range(len(arr)-i-1):       #range = len(arr)-i-1 : to prevent looking for the sorted elements 
