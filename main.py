@@ -11,6 +11,8 @@ if __name__ == '__main__':
     generator = g.GenerateArray()
     arr = generator.generate_array(10, 0, 10)
     print(arr)
+    s.heap_sort(arr)
+    print('\n',arr)
 
 
 def check_if_sorted(array):
