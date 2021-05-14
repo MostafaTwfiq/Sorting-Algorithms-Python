@@ -100,6 +100,33 @@ def heapify(arr, n, i):
         # Heapify the root.
         heapify(arr, n, largest)
 
+
+def bubbleSort(arr):
+    for i in range(len(arr)-1):
+        swap = False
+
+        for j in range(len(arr)-i-1):       #range = len(arr)-i-1 : to prevent looking for the sorted elements 
+
+            if arr[j] > arr[j+1]:
+             temp = arr[j]
+             arr[j] = arr[j+1]
+             arr[j+1] = temp
+             swap = True
+         
+        if swap == False:           
+         break
+
+def insertionSort(arr):
+    for i in range(1,len(arr)):
+        hole = i
+        value = arr[i]
+    
+        while hole > 0 and arr[hole-1]>value:
+             arr[hole] = arr[hole-1]
+             hole = hole-1
+    
+        arr[hole] = value
+
 def benchmark(func, length):
     total = 0
     for i in range(10):
@@ -109,3 +136,4 @@ def benchmark(func, length):
         total += (end - start)
     total /= (i+1)
     return total
+
