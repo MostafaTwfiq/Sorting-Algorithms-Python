@@ -2,17 +2,17 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import time
+import timeit
 
 import sorting as s
-import generator as g
+import generator
+import matplotlib.pyplot as plt
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    generator = g.GenerateArray()
-    arr = generator.generate_array(10, 0, 10)
-    print(arr)
-    s.heap_sort(arr)
-    print('\n',arr)
+    print(s.benchmark(s.selection_sort, 10000))
 
 
 def check_if_sorted(array):
@@ -21,5 +21,8 @@ def check_if_sorted(array):
             return False
 
     return True
+
+
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

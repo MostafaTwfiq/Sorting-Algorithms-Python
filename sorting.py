@@ -1,3 +1,9 @@
+import time
+import timeit
+
+import generator
+
+
 def quick_sort_helper(arr, s, e):
     if e - s <= 0:
         return
@@ -63,13 +69,13 @@ def merge(arr, left, right):
 
 
 def heap_sort(arr):
-    length=len(arr)
-    for i in range (length//2 -1,-1,-1):
-        heapify(arr,length,i)
+    length = len(arr)
+    for i in range(length // 2 - 1, -1, -1):
+        heapify(arr, length, i)
 
-    for i in range (length-1,0,-1):
-        arr[0] , arr[i] = arr[i] , arr[0]
-        heapify(arr,i,0)
+    for i in range(length - 1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify(arr, i, 0)
 
 
 def heapify(arr, n, i):
@@ -93,3 +99,13 @@ def heapify(arr, n, i):
 
         # Heapify the root.
         heapify(arr, n, largest)
+
+def benchmark(func, length):
+    total = 0
+    for i in range(10):
+        start = timeit.default_timer()
+        func(generator.generate_array(length))
+        end = timeit.default_timer()
+        total += (end - start)
+    total /= (i+1)
+    return total
