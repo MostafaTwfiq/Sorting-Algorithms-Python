@@ -128,13 +128,8 @@ def insertion_sort(arr):
         arr[hole] = value
 
 
-def benchmark(func, length):
-    total = 0
-    i = 0
-    for i in range(1):
-        start = timeit.default_timer()
-        func(generator.generate_array(length))
-        end = timeit.default_timer()
-        total += (end - start)
-    total /= (i + 1)
-    return total
+def benchmark(func, arr):
+    start = timeit.default_timer()
+    func(arr)
+    end = timeit.default_timer()
+    return end - start
