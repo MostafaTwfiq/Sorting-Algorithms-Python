@@ -1,4 +1,3 @@
-import time
 import timeit
 
 import generator
@@ -80,18 +79,18 @@ def heap_sort(arr):
 
 def heapify(arr, n, i):
     largest = i  # Initialize largest as root
-    l = 2 * i + 1  # left = 2*i + 1
-    r = 2 * i + 2  # right = 2*i + 2
+    left = 2 * i + 1  # left = 2*i + 1
+    right = 2 * i + 2  # right = 2*i + 2
 
     # See if left child of root exists and is
     # greater than root
-    if l < n and arr[largest] < arr[l]:
-        largest = l
+    if left < n and arr[largest] < arr[left]:
+        largest = left
 
     # See if right child of root exists and is
     # greater than root
-    if r < n and arr[largest] < arr[r]:
-        largest = r
+    if right < n and arr[largest] < arr[right]:
+        largest = right
 
     # Change root, if needed
     if largest != i:
@@ -101,39 +100,41 @@ def heapify(arr, n, i):
         heapify(arr, n, largest)
 
 
-def bubbleSort(arr):
-    for i in range(len(arr)-1):
+def bubble_sort(arr):
+    for i in range(len(arr) - 1):
         swap = False
 
-        for j in range(len(arr)-i-1):       #range = len(arr)-i-1 : to prevent looking for the sorted elements 
+        for j in range(len(arr) - i - 1):  # range = len(arr)-i-1 : to prevent looking for the sorted elements
 
-            if arr[j] > arr[j+1]:
-             temp = arr[j]
-             arr[j] = arr[j+1]
-             arr[j+1] = temp
-             swap = True
-         
-        if swap == False:           
-         break
+            if arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+                swap = True
 
-def insertionSort(arr):
-    for i in range(1,len(arr)):
+        if not swap:
+            break
+
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
         hole = i
         value = arr[i]
-    
-        while hole > 0 and arr[hole-1]>value:
-             arr[hole] = arr[hole-1]
-             hole = hole-1
-    
+
+        while hole > 0 and arr[hole - 1] > value:
+            arr[hole] = arr[hole - 1]
+            hole = hole - 1
+
         arr[hole] = value
+
 
 def benchmark(func, length):
     total = 0
-    for i in range(10):
+    i = 0
+    for i in range(1):
         start = timeit.default_timer()
         func(generator.generate_array(length))
         end = timeit.default_timer()
         total += (end - start)
-    total /= (i+1)
+    total /= (i + 1)
     return total
-
