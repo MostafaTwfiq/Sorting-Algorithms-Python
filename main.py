@@ -52,7 +52,7 @@ def plot_graph(graph_points, sorintg_types, types_colors):
 
     plt.title('Sorts')
     plt.xlabel('Size')
-    plt.ylabel('Time in micro')
+    plt.ylabel('Time in milliseconds')
 
     plt.show()
 
@@ -113,7 +113,7 @@ if __name__ == '__main__':
     for fun in sorting_functions:
         for cur_arr in arr:
             length = len(cur_arr)
-            time = s.benchmark(fun, cur_arr.copy()) * 10 ** 6
+            time = s.benchmark(fun, cur_arr.copy()) * 10 ** 3
             gp = GraphPoint(length, time)
             plot_functions[counter].append(gp)
 
