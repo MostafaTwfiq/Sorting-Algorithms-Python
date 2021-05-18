@@ -6,5 +6,5 @@
   Finally, we implemented a function that takes points and fits a second order curve between them to visualize the sorting algorithm complexity.
 
 
-# Complexity graph
+## Complexity graph
   ![graph](graph.png)
